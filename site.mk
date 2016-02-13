@@ -27,7 +27,8 @@ GLUON_SITE_PACKAGES := \
 
 # Always call make from the command line with the desired release version!
 # otherwise this is generated:
-DEFAULT_GLUON_RELEASE := 0.8~exp$(shell date '+%y%m%d%H%M')
+DEFAULT_GLUON_RELEASE := 0.16.1~exp$(shell date '+%y%m%d%H%M')
+
 
 # Allow overriding the release number from the command line
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
@@ -43,11 +44,11 @@ GLUON_LANGS ?= en de
 
 # support the USB stack
 USB_PACKAGES_BASIC := \
-    kmod-usb-core \
-    kmod-usb2
+	kmod-usb-core \
+	kmod-usb2
 # FAT32 Support for USB
 USB_PACKAGES := $(USB_PACKAGES_BASIC) \
-    block-mount \
+	block-mount \
     kmod-fs-ext4 \
     kmod-fs-vfat \
     kmod-usb-storage  \
