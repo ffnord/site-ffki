@@ -48,7 +48,7 @@ USB_PACKAGES_BASIC := \
 	kmod-usb2
 # FAT32 Support for USB
 USB_PACKAGES := $(USB_PACKAGES_BASIC) \
-	block-mount \
+    block-mount \
     kmod-fs-ext4 \
     kmod-fs-vfat \
     kmod-usb-storage  \
@@ -67,6 +67,8 @@ USB_PACKAGES := $(USB_PACKAGES_BASIC) \
     kmod-nls-iso8859-15  \
     kmod-nls-iso8859-2  \
     kmod-nls-koi8r  \
+    gluon-config-mode-usb-media \
+    gluon-usb-media \
     kmod-nls-utf8
 
 ifeq ($(GLUON_TARGET),x86-generic)

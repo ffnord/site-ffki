@@ -1,0 +1,7 @@
+GLUON_SITE_FEEDS='ffki'
+
+# contains the packet
+# * gluon-config-mode-usb-media
+# * gluon-usb-media
+PACKAGES_USB_PACKAGES_REPO=https://github.com/fsteinel/gluon-packages
+PACKAGES_FFHH_PACKAGES_COMMIT=b32851a5d972234080ef9e916d56ce667df05f79
