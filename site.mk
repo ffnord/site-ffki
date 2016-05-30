@@ -1,7 +1,7 @@
 GLUON_SITE_PACKAGES := \
 	gluon-mesh-batman-adv-14 \
 	gluon-alfred \
-	gluon-announced \
+	gluon-respondd \
 	gluon-autoupdater \
 	gluon-setup-mode \
 	gluon-config-mode-core \
@@ -22,12 +22,14 @@ GLUON_SITE_PACKAGES := \
 	gluon-radvd \
 	gluon-status-page \
 	iwinfo \
+	fastd-traffic-status \
 	iptables \
 	haveged
 
-# Always call make from the command line with the desired release version!
+# Always call `make` from the command line with the desired release version!
 # otherwise this is generated:
-DEFAULT_GLUON_RELEASE := 0.8~exp$(shell date '+%y%m%d%H%M')
+DEFAULT_GLUON_RELEASE := 2016.1.5~exp$(shell date '+%y%m%d%H%M')
+
 
 # Allow overriding the release number from the command line
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
@@ -43,8 +45,8 @@ GLUON_LANGS ?= en de
 
 # support the USB stack
 USB_PACKAGES_BASIC := \
-    kmod-usb-core \
-    kmod-usb2
+	kmod-usb-core \
+	kmod-usb2
 # FAT32 Support for USB
 USB_PACKAGES := $(USB_PACKAGES_BASIC) \
     block-mount \
@@ -86,6 +88,7 @@ ifeq ($(GLUON_TARGET),ar71xx-generic)
 	GLUON_TLWR2543_SITE_PACKAGES := $(USB_PACKAGES)
 	GLUON_WRT160NL_SITE_PACKAGES := $(USB_PACKAGES)
 	GLUON_DIR825B1_SITE_PACKAGES := $(USB_PACKAGES)
+	GLUON_DIR505A1_SITE_PACKAGES := $(USB_PACKAGES)
 	GLUON_GLINET_SITE_PACKAGES := $(USB_PACKAGES)
 	GLUON_WNDR3700_SITE_PACKAGES := $(USB_PACKAGES)
 	GLUON_WZRHPG450H_SITE_PACKAGES := $(USB_PACKAGES)
