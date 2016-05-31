@@ -18,7 +18,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-luci-private-wifi \
 	gluon-luci-wifi-config \
 	gluon-next-node \
-	gluon-mesh-vpn-fastd \
+	#gluon-mesh-vpn-fastd \
 	gluon-radvd \
 	gluon-status-page \
 	iwinfo \
@@ -29,6 +29,7 @@ GLUON_SITE_PACKAGES := \
 # Always call `make` from the command line with the desired release version!
 # otherwise this is generated:
 DEFAULT_GLUON_RELEASE := 2016.1.5~exp$(shell date '+%y%m%d%H%M')
+#DEFAULT_GLUON_RELEASE := 2016.1.5
 
 
 # Allow overriding the release number from the command line
@@ -36,6 +37,7 @@ GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
 
 GLUON_PRIORITY ?= 0
 GLUON_BRANCH ?= experimental
+#GLUON_BRANCH ?= stable
 export GLUON_BRANCH
 
 GLUON_TARGET ?= ar71xx-generic
