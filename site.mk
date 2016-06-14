@@ -21,9 +21,9 @@ GLUON_SITE_PACKAGES := \
 	gluon-radvd \
 	gluon-status-page \
 	iwinfo \
-	fastd-traffic-status \
 	iptables \
 	haveged \
+	#fastd-traffic-status \
 	#gluon-mesh-vpn-fastd
 
 # Always call `make` from the command line with the desired release version!
