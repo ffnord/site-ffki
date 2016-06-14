@@ -18,13 +18,13 @@ GLUON_SITE_PACKAGES := \
 	gluon-luci-private-wifi \
 	gluon-luci-wifi-config \
 	gluon-next-node \
-	#gluon-mesh-vpn-fastd \
 	gluon-radvd \
 	gluon-status-page \
 	iwinfo \
 	fastd-traffic-status \
 	iptables \
-	haveged
+	haveged \
+	#gluon-mesh-vpn-fastd
 
 # Always call `make` from the command line with the desired release version!
 # otherwise this is generated:
