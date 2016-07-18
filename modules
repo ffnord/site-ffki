@@ -7,7 +7,7 @@ GLUON_SITE_FEEDS='ffki'
 
 ##	PACKAGES_$feedname_REPO
 #		the  git repository from where to clone the package feed
-PACKAGES_FFKI_REPO=git://github.com/fsteinel/gluon-packages.git
+PACKAGES_FFKI_REPO=git://github.com/rubo77/gluon-packages.git
 # contains the packet
 # * gluon-usb-media
 # * gluon-config-mode-usb-media
@@ -18,4 +18,4 @@ PACKAGES_FFKI_COMMIT=ba8a4add6b7aff39569d970e743afeba0ea87054
 
 ##  PACKAGES_$feedname_BRANCH
 #   the branch to check out
-#PACKAGES_FFKI_BRANCH=my_branch
+PACKAGES_FFKI_BRANCH=master
