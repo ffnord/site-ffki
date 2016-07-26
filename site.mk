@@ -9,7 +9,6 @@ GLUON_SITE_PACKAGES := \
 	gluon-config-mode-hostname \
 	gluon-config-mode-mesh-vpn \
 	gluon-config-mode-geo-location \
-	gluon-config-mode-contact-info \
 	gluon-ebtables-filter-multicast \
 	gluon-ebtables-filter-ra-dhcp \
 	gluon-luci-admin \
@@ -24,10 +23,13 @@ GLUON_SITE_PACKAGES := \
 	iwinfo \
 	iptables \
 	haveged
+ # from ffki-packages:
+ GLUON_SITE_PACKAGES += \
+	gluon-config-mode-contact-obligatory
 
 # Always call `make` from the command line with the desired release version!
 # otherwise this is generated:
-DEFAULT_GLUON_RELEASE := 2016.1~exp$(shell date '+%y%m%d%H%M')
+DEFAULT_GLUON_RELEASE := 2016.1.5~exp$(shell date '+%y%m%d%H%M')+usb-mount
 
 
 # Allow overriding the release number from the command line
@@ -46,30 +48,33 @@ GLUON_LANGS ?= en de
 USB_PACKAGES_BASIC := \
 	kmod-usb-core \
 	kmod-usb2
+
 # FAT32 Support for USB
 USB_PACKAGES := $(USB_PACKAGES_BASIC) \
-    block-mount \
-    kmod-fs-ext4 \
-    kmod-fs-vfat \
-    kmod-usb-storage  \
-    kmod-usb-storage-extras  \
-    blkid  \
-    swap-utils  \
-    kmod-nls-cp1250  \
-    kmod-nls-cp1251  \
-    kmod-nls-cp437  \
-    kmod-nls-cp775  \
-    kmod-nls-cp850  \
-    kmod-nls-cp852  \
-    kmod-nls-cp866  \
-    kmod-nls-iso8859-1  \
-    kmod-nls-iso8859-13  \
-    kmod-nls-iso8859-15  \
-    kmod-nls-iso8859-2  \
-    kmod-nls-koi8r  \
-    gluon-usb-media \
-    gluon-config-mode-usb-media \
-    kmod-nls-utf8
+  block-mount \
+  kmod-fs-ext4 \
+  kmod-fs-vfat \
+  kmod-usb-storage  \
+  kmod-usb-storage-extras  \
+  blkid  \
+  swap-utils  \
+  kmod-nls-cp1250  \
+  kmod-nls-cp1251  \
+  kmod-nls-cp437  \
+  kmod-nls-cp775  \
+  kmod-nls-cp850  \
+  kmod-nls-cp852  \
+  kmod-nls-cp866  \
+  kmod-nls-iso8859-1  \
+  kmod-nls-iso8859-13  \
+  kmod-nls-iso8859-15  \
+  kmod-nls-iso8859-2  \
+  kmod-nls-koi8r  \
+  kmod-nls-utf8
+ # from ffki-packages:
+ USB_PACKAGES += \
+  gluon-usb-media \
+	gluon-config-mode-usb-media
 
 ifeq ($(GLUON_TARGET),x86-generic)
 	# support the USB stack on x86 devices
@@ -100,3 +105,4 @@ endif
 ifeq ($(GLUON_TARGET),mpc85xx-generic)
 	GLUON_TLWDR4900_SITE_PACKAGES := $(USB_PACKAGES)
 endif
+
