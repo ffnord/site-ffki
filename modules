@@ -3,21 +3,29 @@
 
 ##	GLUON_SITE_FEEDS
 #		for each feed name given, add the corresponding PACKAGES_* lines
-GLUON_SITE_FEEDS='ffki'
+GLUON_SITE_FEEDS='ffki ssidchanger sargon'
 
 ##	PACKAGES_$feedname_REPO
 #		the  git repository from where to clone the package feed
 PACKAGES_FFKI_REPO=git://github.com/freifunk-kiel/ffki-packages.git
+PACKAGES_RUBO77_REPO=git://github.com/rubo77/gluon-ssid-changer.git
+PACKAGES_SARGON_REPO=https://git.toppoint.de/sargon/roamguide/
 
 # contains the packet
 # * gluon-usb-media
 # * gluon-usb-media
 # * gluon-config-mode-usb-media
+# * roamguide by sargon
+# * gluon-ssid-changer forked from ffac/gluon-ssid-changer
 
 ##	PACKAGES_$feedname_COMMIT
 #		the version/commit of the git repository to clone
 PACKAGES_FFKI_COMMIT=e265379ee5025af167649cc3c6ebbb75b91136bc
+PACKAGES_RUBO77_COMMIT=5a509310b73612c4f81a096fe3bed81d86426598
+PACKAGES_SARGON_COMMIT=da577e9a501c4203ca7ce5a2ff03027c7c2711be
 
 ##  PACKAGES_$feedname_BRANCH
 #   the branch to check out
 PACKAGES_FFKI_BRANCH=master
+PACKAGES_RUBO77_BRANCH=ssid-additional
+PACKAGES_SARGON_BRANCH=master

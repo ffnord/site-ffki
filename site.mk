@@ -20,9 +20,13 @@ GLUON_SITE_PACKAGES := \
 	gluon-mesh-vpn-fastd \
 	gluon-radvd \
 	gluon-status-page \
+	gluon-ssid-changer \
 	iwinfo \
 	iptables \
 	haveged
+ # from sargon:
+ GLUON_SITE_PACKAGES += \
+	roamguide
  # from ffki-packages:
  GLUON_SITE_PACKAGES += \
 	gluon-config-mode-contact-obligatory
