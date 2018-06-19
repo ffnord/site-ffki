@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # validate_site.sh checks if the site.conf is valid json
-GLUON_BRANCH='master'
+GLUON_BRANCH='feature-autoupdate-proxy'
 
 P=$(pwd)
 echo "####### validating $P/site.conf ..."
@@ -46,7 +46,7 @@ done
 cd $testpath
 git init gluon
 cd gluon
-git remote add origin https://github.com/freifunk-gluon/gluon
+git remote add origin https://github.com/tobleminer/gluon
 git config core.sparsecheckout true
 echo "package/*" >> .git/info/sparse-checkout
 git pull --depth=1 origin $GLUON_BRANCH
@@ -55,7 +55,7 @@ cd $testpath/packages/package
 
 echo "####### validating GLUON_SITE_PACKAGES from $P/site.mk ..."
 # ignore standard packages:
-sed '/GLUON_RELEASE/,$d' $P/site.mk | egrep -v '(#|G|iwinfo|iptables|haveged)'> $testpath/site.mk.sh
+sed '/GLUON_RELEASE/,$d' $P/site.mk | egrep -v '(#|G|iwinfo|iptables|haveged|nano|vim|iperf3)'> $testpath/site.mk.sh
 sed -i 's/\s\\$//g;/^$/d' $testpath/site.mk.sh
 sed -i 's/gluon-mesh-batman-adv-1[45]/gluon-mesh-batman-adv/g' $testpath/site.mk.sh
 cat $testpath/site.mk.sh |
